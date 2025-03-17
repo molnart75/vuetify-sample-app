@@ -1,0 +1,9 @@
+# Public mappa
+# 
+# Ez a mappa a statikus fájlok (képek, ikonok, egyéb média) tárolására szolgál.
+# A `json-server` ebből a mappából szolgálja ki a statikus fájlokat.
+#
+# Az alábbi almappákat hozd létre használat előtt:
+# - images/projects/ - Projekt képek
+# - images/slider/ - Slider képek
+# - images/team/ - Csapattagok képei

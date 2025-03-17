@@ -1,0 +1,391 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "E-Commerce Platform Redesign",
+      "description": "Complete redesign and redevelopment of an existing e-commerce platform with modern UI and enhanced features",
+      "type": "web",
+      "completionDate": "2023-11-15",
+      "client": "FashionStore Ltd.",
+      "image": "/images/projects/ecommerce.jpg",
+      "technologies": ["Vue.js", "Vuetify", "Node.js", "MongoDB"],
+      "features": ["Responsive design", "Payment gateway integration", "Inventory management", "Analytics dashboard"],
+      "teamSize": 6,
+      "duration": "4 months"
+    },
+    {
+      "id": 2,
+      "name": "Fleet Management System",
+      "description": "Custom fleet management solution with real-time tracking and maintenance scheduling",
+      "type": "web",
+      "completionDate": "2023-08-22",
+      "client": "Logistics Pro Inc.",
+      "image": "/images/projects/fleet.jpg",
+      "technologies": ["Vue.js", "Express.js", "PostgreSQL", "Google Maps API"],
+      "features": ["Real-time vehicle tracking", "Maintenance alerts", "Fuel usage analytics", "Driver performance metrics"],
+      "teamSize": 5,
+      "duration": "6 months"
+    },
+    {
+      "id": 3,
+      "name": "Healthcare Patient Portal",
+      "description": "Secure patient portal for appointment scheduling, medical records, and doctor communication",
+      "type": "web",
+      "completionDate": "2024-01-10",
+      "client": "MediCare Group",
+      "image": "/images/projects/healthcare.jpg",
+      "technologies": ["Vue.js", "Vuetify", "Express.js", "MySQL", "Socket.io"],
+      "features": ["Secure messaging", "Appointment scheduling", "Medical records access", "Prescription renewals"],
+      "teamSize": 8,
+      "duration": "9 months"
+    },
+    {
+      "id": 4,
+      "name": "Inventory Control App",
+      "description": "Cross-platform mobile application for warehouse inventory management with barcode scanning",
+      "type": "mobile",
+      "completionDate": "2023-09-30",
+      "client": "SupplyChain Solutions",
+      "image": "/images/projects/inventory.jpg",
+      "technologies": ["Flutter", "Firebase", "Barcode scanning API"],
+      "features": ["Barcode/QR code scanning", "Real-time inventory updates", "Low stock alerts", "Reporting dashboard"],
+      "teamSize": 4,
+      "duration": "5 months"
+    },
+    {
+      "id": 5,
+      "name": "Financial Analytics Dashboard",
+      "description": "Comprehensive desktop application for financial data analysis and visualization",
+      "type": "desktop",
+      "completionDate": "2023-12-15",
+      "client": "Investment Partners LLC",
+      "image": "/images/projects/finance.jpg",
+      "technologies": ["Electron.js", "Vue.js", "D3.js", "Python (data processing)"],
+      "features": ["Real-time market data", "Custom indicators", "Portfolio management", "Prediction models"],
+      "teamSize": 7,
+      "duration": "8 months"
+    },
+    {
+      "id": 6,
+      "name": "Restaurant Management System",
+      "description": "Integrated system for restaurant operations including ordering, kitchen management, and inventory",
+      "type": "web",
+      "completionDate": "2023-10-05",
+      "client": "Fine Dining Group",
+      "image": "/images/projects/restaurant.jpg",
+      "technologies": ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
+      "features": ["Table management", "Digital menu", "Kitchen order display", "Inventory tracking"],
+      "teamSize": 5,
+      "duration": "6 months"
+    },
+    {
+      "id": 7,
+      "name": "Fitness Tracking App",
+      "description": "Mobile application for tracking workouts, nutrition, and health metrics with social features",
+      "type": "mobile",
+      "completionDate": "2024-02-20",
+      "client": "FitLife Inc.",
+      "image": "/images/projects/fitness.jpg",
+      "technologies": ["React Native", "Firebase", "HealthKit/Google Fit integration"],
+      "features": ["Workout planning", "Progress tracking", "Nutritional analysis", "Social sharing"],
+      "teamSize": 4,
+      "duration": "7 months"
+    },
+    {
+      "id": 8,
+      "name": "Smart Home Control System",
+      "description": "Desktop and mobile solution for managing smart home devices with automation capabilities",
+      "type": "desktop",
+      "completionDate": "2023-07-30",
+      "client": "HomeTech Innovations",
+      "image": "/images/projects/smarthome.jpg",
+      "technologies": ["Electron.js", "React Native", "Node.js", "IoT integration"],
+      "features": ["Device control", "Automation scripts", "Energy monitoring", "Security alerts"],
+      "teamSize": 6,
+      "duration": "10 months"
+    },
+    {
+      "id": 9,
+      "name": "Project Management Tool",
+      "description": "Custom project management platform with advanced resource allocation and time tracking",
+      "type": "web",
+      "completionDate": "2024-01-25",
+      "client": "Agile Projects Corp.",
+      "image": "/images/projects/projectmgmt.jpg",
+      "technologies": ["Vue.js", "Vuetify", "GraphQL", "MongoDB"],
+      "features": ["Task management", "Resource allocation", "Gantt charts", "Time tracking"],
+      "teamSize": 5,
+      "duration": "6 months"
+    },
+    {
+      "id": 10,
+      "name": "Real Estate Listing Platform",
+      "description": "Comprehensive web platform for real estate listings with virtual tours and mortgage calculator",
+      "type": "web",
+      "completionDate": "2023-11-10",
+      "client": "Premier Properties",
+      "image": "/images/projects/realestate.jpg",
+      "technologies": ["Vue.js", "Node.js", "MongoDB", "Three.js"],
+      "features": ["Property listings", "Virtual tours", "Mortgage calculator", "Agent profiles"],
+      "teamSize": 6,
+      "duration": "7 months"
+    },
+    {
+      "id": 11,
+      "name": "Attendance Tracking System",
+      "description": "Mobile application for employee attendance tracking with geolocation verification",
+      "type": "mobile",
+      "completionDate": "2023-08-15",
+      "client": "Enterprise Solutions Inc.",
+      "image": "/images/projects/attendance.jpg",
+      "technologies": ["React Native", "Node.js", "PostgreSQL", "Geolocation API"],
+      "features": ["Location-based check-in", "Work hour reports", "Leave management", "Manager approvals"],
+      "teamSize": 3,
+      "duration": "4 months"
+    },
+    {
+      "id": 12,
+      "name": "Video Editing Suite",
+      "description": "Professional desktop video editing application with advanced effects and cloud integration",
+      "type": "desktop",
+      "completionDate": "2024-02-05",
+      "client": "Creative Media Productions",
+      "image": "/images/projects/videoeditor.jpg",
+      "technologies": ["Electron.js", "FFmpeg", "WebGL", "AWS integration"],
+      "features": ["Multi-track editing", "Effects library", "Cloud storage", "Collaboration tools"],
+      "teamSize": 8,
+      "duration": "12 months"
+    },
+    {
+      "id": 13,
+      "name": "Booking and Reservation System",
+      "description": "Web-based booking system for hotels and vacation rentals with payment processing",
+      "type": "web",
+      "completionDate": "2023-12-20",
+      "client": "TravelStay Group",
+      "image": "/images/projects/booking.jpg",
+      "technologies": ["Vue.js", "Vuetify", "Node.js", "MySQL"],
+      "features": ["Availability calendar", "Online payments", "Booking management", "Customer reviews"],
+      "teamSize": 5,
+      "duration": "6 months"
+    },
+    {
+      "id": 14,
+      "name": "Delivery Route Optimizer",
+      "description": "Mobile application for delivery drivers with route optimization and real-time updates",
+      "type": "mobile",
+      "completionDate": "2023-10-15",
+      "client": "FastDelivery Services",
+      "image": "/images/projects/delivery.jpg",
+      "technologies": ["Flutter", "Google Maps API", "Firebase", "Routing algorithms"],
+      "features": ["Route optimization", "Real-time tracking", "Delivery confirmations", "Analytics dashboard"],
+      "teamSize": 4,
+      "duration": "5 months"
+    },
+    {
+      "id": 15,
+      "name": "Data Visualization Tool",
+      "description": "Desktop application for creating interactive data visualizations and reports",
+      "type": "desktop",
+      "completionDate": "2024-01-05",
+      "client": "Data Insights Corp.",
+      "image": "/images/projects/datavis.jpg",
+      "technologies": ["Electron.js", "D3.js", "Python", "PostgreSQL"],
+      "features": ["Chart generation", "Custom visualizations", "Data import/export", "Reporting tools"],
+      "teamSize": 6,
+      "duration": "8 months"
+    }
+  ],
+  "strengths": [
+    {
+      "id": 1,
+      "title": "Cutting-Edge Technology",
+      "description": "We leverage the latest frameworks and technologies to deliver modern, scalable solutions.",
+      "icon": "mdi-rocket-launch"
+    },
+    {
+      "id": 2,
+      "title": "Expert Team",
+      "description": "Our team of skilled developers, designers, and project managers brings years of industry experience.",
+      "icon": "mdi-account-group"
+    },
+    {
+      "id": 3,
+      "title": "Agile Methodology",
+      "description": "We follow agile principles to ensure flexible, efficient, and collaborative project development.",
+      "icon": "mdi-sync"
+    },
+    {
+      "id": 4,
+      "title": "Client-Focused Approach",
+      "description": "We prioritize understanding your business needs to deliver tailored solutions that drive real value.",
+      "icon": "mdi-handshake"
+    },
+    {
+      "id": 5,
+      "title": "Quality Assurance",
+      "description": "Rigorous testing and quality control processes ensure our deliverables meet the highest standards.",
+      "icon": "mdi-check-decagram"
+    },
+    {
+      "id": 6,
+      "title": "Ongoing Support",
+      "description": "We provide comprehensive post-launch support and maintenance to ensure long-term success.",
+      "icon": "mdi-headset"
+    }
+  ],
+  "pricing": [
+    {
+      "id": 1,
+      "name": "Basic",
+      "description": "For small businesses and startups",
+      "price": 2500,
+      "currency": "EUR",
+      "period": "per project",
+      "features": [
+        "Website development",
+        "Responsive design",
+        "Basic CMS integration",
+        "3 revision rounds",
+        "1 month support"
+      ],
+      "popular": false
+    },
+    {
+      "id": 2,
+      "name": "Professional",
+      "description": "For growing businesses with specific needs",
+      "price": 5000,
+      "currency": "EUR",
+      "period": "per project",
+      "features": [
+        "Custom web application",
+        "Database integration",
+        "Advanced functionality",
+        "5 revision rounds",
+        "3 months support",
+        "Performance optimization"
+      ],
+      "popular": true
+    },
+    {
+      "id": 3,
+      "name": "Enterprise",
+      "description": "For large organizations with complex requirements",
+      "price": 12000,
+      "currency": "EUR",
+      "period": "per project",
+      "features": [
+        "Full-scale system development",
+        "Custom integrations",
+        "Advanced security features",
+        "Unlimited revisions",
+        "12 months support",
+        "Dedicated project manager",
+        "Training and documentation"
+      ],
+      "popular": false
+    },
+    {
+      "id": 4,
+      "name": "Maintenance",
+      "description": "Ongoing support for existing systems",
+      "price": 1000,
+      "currency": "EUR",
+      "period": "per month",
+      "features": [
+        "Bug fixes",
+        "Security updates",
+        "Performance monitoring",
+        "Regular backups",
+        "Technical support",
+        "Minor feature updates"
+      ],
+      "popular": false
+    }
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "title": "Building Digital Excellence",
+      "subtitle": "Custom software solutions for modern businesses",
+      "image": "/images/slider/2149570939.0.jpg",
+      "buttonText": "Explore Our Work",
+      "buttonLink": "/projects"
+    },
+    {
+      "id": 2,
+      "title": "Mobile Solutions",
+      "subtitle": "Cross-platform mobile applications with native performance",
+      "image": "/images/slider/real_madrid_fc_barcelona.png.jpg",
+      "buttonText": "See Mobile Projects",
+      "buttonLink": "/projects?type=mobile"
+    },
+    {
+      "id": 3,
+      "title": "Web Development",
+      "subtitle": "Responsive, modern web applications and websites",
+      "image": "/images/slider/4055835-82254348-2560-1440.jpg",
+      "buttonText": "View Web Projects",
+      "buttonLink": "/projects?type=web"
+    },
+    {
+      "id": 4,
+      "title": "Desktop Applications",
+      "subtitle": "Powerful desktop solutions for complex business needs",
+      "image": "/images/slider/Real-Madrid-CF-v-FC-Barcelona.jpg",
+      "buttonText": "Discover Desktop Apps",
+      "buttonLink": "/projects?type=desktop"
+    }
+  ],
+  "stats": {
+    "completedProjects": 250,
+    "teamMembers": 35,
+    "yearsExperience": 12,
+    "clientSatisfaction": 98
+  },
+  "team": [
+    {
+      "id": 1,
+      "name": "Alexandra Smith",
+      "position": "CEO & Founder",
+      "bio": "With over 15 years of experience in software development and business management, Alexandra founded the company with a vision to create impactful digital solutions.",
+      "image": "/images/team/alexandra.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "position": "CTO",
+      "bio": "Michael oversees all technical aspects of the company, bringing 12 years of expertise in software architecture and emerging technologies.",
+      "image": "/images/team/michael.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sarah Johnson",
+      "position": "Lead Designer",
+      "bio": "Sarah leads our design team with her exceptional eye for detail and 8 years of experience in UX/UI design for web and mobile applications.",
+      "image": "/images/team/sarah.jpg"
+    },
+    {
+      "id": 4,
+      "name": "David Rodriguez",
+      "position": "Development Manager",
+      "bio": "David manages our development teams and projects, ensuring quality and timely delivery with his 10 years of software development experience.",
+      "image": "/images/team/david.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Emma Wilson",
+      "position": "Project Manager",
+      "bio": "Emma excels at coordinating complex projects and client communication, with 7 years of experience in agile project management.",
+      "image": "/images/team/emma.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Thomas Lee",
+      "position": "Lead Backend Developer",
+      "bio": "Thomas specializes in creating robust backend systems and APIs, with 9 years of experience in server-side technologies.",
+      "image": "/images/team/thomas.jpg"
+    }
+  ]
+}
