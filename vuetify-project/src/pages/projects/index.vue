@@ -117,7 +117,6 @@ interface Project {
 interface DataTableItem {
   raw: Project;
   columns: Record<string, unknown>;
-  // további lehetséges mezők a Vuetify által biztosított item objektumban
 }
 
 // Define route meta
@@ -195,8 +194,8 @@ const loadItems = async () => {
     const params: ProjectsParams = {
       _page: page.value,
       _limit: itemsPerPage.value,
-      _sort: sortField,
-      _order: sortOrder
+      _sort: sortBy.value.split(':')[0],
+      _order: sortBy.value.split(':')[1]
     };
     
     // Add search param if present
@@ -219,6 +218,7 @@ const loadItems = async () => {
     const data = await projectsStore.fetchProjects(params);
     projects.value = data;
     totalProjects.value = projectsStore.totalProjects;
+    
   } catch (error) {
     console.error('Error loading projects:', error);
   } finally {

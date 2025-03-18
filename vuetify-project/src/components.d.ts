@@ -11,7 +11,6 @@ declare module 'vue' {
     AppHeader: typeof import('./components/AppHeader.vue')['default']
     AppSidebar: typeof import('./components/AppSidebar.vue')['default']
     ContactForm: typeof import('./components/contact/ContactForm.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HeroSlider: typeof import('./components/home/HeroSlider.vue')['default']
     NewsletterSection: typeof import('./components/home/NewsletterSection.vue')['default']
     PricingPlans: typeof import('./components/pricing/PricingPlans.vue')['default']

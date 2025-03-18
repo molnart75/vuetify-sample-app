@@ -46,18 +46,23 @@ export const useProjectsStore = defineStore('projects', () => {
     
     try {
       const response = await axios.get(`${baseUrl}/projects`, {
-        params: params,
-        headers: {
-          'X-Total-Count': 'true'
-        }
+        params: params
       })
       
       projects.value = response.data
       
-      // Get total count from headers if available
+      // projects.ts - fetchProjects function
       const totalHeader = response.headers['x-total-count']
       if (totalHeader) {
         totalProjects.value = parseInt(totalHeader)
+      } else {
+        // If header is missing, use a fallback method
+        // Option 1: Use the full length of the collection (make another request if needed)
+        const fullResponse = await axios.get(`${baseUrl}/projects`);
+        totalProjects.value = fullResponse.data.length;
+        
+        // Option 2: Use a hardcoded value for development
+        // totalProjects.value = 15; // Total number of projects in db.json
       }
       
       return response.data

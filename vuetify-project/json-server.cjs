@@ -24,6 +24,15 @@ server.use((req, res, next) => {
   next();
 });
 
+// json-server.cjs - add this before server.use('/api', router);
+// Customize router response to include total count
+router.render = (req, res) => {
+  // Always include total count even for filtered data
+  const totalCount = req.app.db.get('projects').value().length;
+  res.header('X-Total-Count', totalCount.toString());
+  res.jsonp(res.locals.data);
+};
+
 // Use default router
 server.use('/api', router);
 
