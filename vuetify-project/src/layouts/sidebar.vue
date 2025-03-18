@@ -11,8 +11,7 @@
     />
     
     <v-main>
-      <!-- Itt kell a slot-ot használni a router-view helyett! -->
-      <slot :filters="filters"></slot>
+      <router-view />
     </v-main>
     
     <AppFooter />
