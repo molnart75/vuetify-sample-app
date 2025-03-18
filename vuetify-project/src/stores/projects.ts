@@ -20,15 +20,18 @@ export interface Project {
 
 export interface ProjectsParams {
   _page?: number;
-  _limit?: number;
+  _per_page?: number;
   _sort?: string;
   _order?: string;
   type?: string;
   q?: string;
+  completionDate_like?: string | number;
+  search?: string; 
+  name_like?: string;
 }
 
 export const useProjectsStore = defineStore('projects', () => {
-  const baseUrl = 'http://localhost:3001'
+ const baseUrl = 'http://localhost:3001'
   
   // Projects state
   const projects = ref<Project[]>([])
@@ -48,24 +51,20 @@ export const useProjectsStore = defineStore('projects', () => {
       const response = await axios.get(`${baseUrl}/projects`, {
         params: params
       })
+      console.log(response.data.data);
       
-      projects.value = response.data
+      projects.value = response.data.data
       
       // projects.ts - fetchProjects function
       const totalHeader = response.headers['x-total-count']
       if (totalHeader) {
         totalProjects.value = parseInt(totalHeader)
       } else {
-        // If header is missing, use a fallback method
-        // Option 1: Use the full length of the collection (make another request if needed)
         const fullResponse = await axios.get(`${baseUrl}/projects`);
         totalProjects.value = fullResponse.data.length;
-        
-        // Option 2: Use a hardcoded value for development
-        // totalProjects.value = 15; // Total number of projects in db.json
       }
       
-      return response.data
+      return response.data.data
     } catch (err) {
       console.error('Error fetching projects:', err)
       error.value = 'Failed to load projects'
@@ -85,7 +84,7 @@ export const useProjectsStore = defineStore('projects', () => {
         params: {
           _sort: 'completionDate',
           _order: 'desc',
-          _limit: limit
+          _per_page: limit
         }
       })
       

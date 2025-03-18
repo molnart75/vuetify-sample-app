@@ -11,7 +11,7 @@
     />
     
     <v-main>
-      <router-view />
+      <router-view :filters="filters" />
     </v-main>
     
     <AppFooter />

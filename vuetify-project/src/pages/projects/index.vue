@@ -19,7 +19,7 @@
             hide-details
             density="compact"
             class="mr-4"
-            @update:model-value="debouncedSearch"
+            @update:model-value="handleSearch"
           />
           
           <v-spacer />
@@ -103,6 +103,7 @@
 import { ref, onMounted, watch } from 'vue'
 import { useProjectsStore } from '@/stores/projects'
 import { debounce } from 'lodash'
+import type { ProjectsParams } from '@/stores/projects'
 
 interface Project {
   id: number;
@@ -114,17 +115,10 @@ interface Project {
   image: string;
 }
 
-interface DataTableItem {
-  raw: Project;
-  columns: Record<string, unknown>;
-}
-
-// Define route meta
 defineOptions({
   layout: 'sidebar'
 })
 
-// Accept filters from parent component (sidebar)
 const props = defineProps({
   filters: {
     type: Object,
@@ -132,10 +126,8 @@ const props = defineProps({
   }
 })
 
-// Store access
 const projectsStore = useProjectsStore()
 
-// Table state
 const headers = [
   { title: 'Project', key: 'name', sortable: true },
   { title: 'Type', key: 'type', sortable: true },
@@ -160,61 +152,50 @@ const sortOptions = [
 ]
 const search = ref('')
 
-// Create debounced search function
 const debouncedSearch = debounce(() => {
-  page.value = 1 // Reset to first page when searching
-  loadItems()
-}, 500)
+  console.log('Searching for:', search.value); 
+  page.value = 1;
+  loadItems();
+}, 500);
 
-// Watch for filter changes from sidebar
+const handleSearch = (val: string) => {
+  search.value = val;
+  debouncedSearch();
+}
+
 watch(() => props.filters, () => {
-  page.value = 1 // Reset to first page when filters change
+  page.value = 1 
   loadItems()
 }, { deep: true })
 
-interface ProjectsParams {
-  _page?: number;
-  _limit?: number;
-  _sort?: string;
-  _order?: string;
-  q?: string;
-  type?: string;
-  completionDate_like?: string | number;
-}
-
-// Load projects with pagination, sorting, and filtering
 const loadItems = async () => {
   loading.value = true;
   
   try {
-    // Parse sort option
     const [sortField, sortOrder] = sortBy.value.split(':');
     
-    // Build query params with proper typing
     const params: ProjectsParams = {
       _page: page.value,
-      _limit: itemsPerPage.value,
-      _sort: sortBy.value.split(':')[0],
-      _order: sortBy.value.split(':')[1]
+      _per_page: itemsPerPage.value,
+      _sort: sortField,
+      _order: sortOrder
     };
     
-    // Add search param if present
-    if (search.value) {
-      params.q = search.value;
+    if (search.value && search.value.trim() !== '') {
+      const searchTerm = search.value.trim();
+      params.name_like = searchTerm;
     }
+
+    console.log('Final request params:', params);
     
-    // Add type filter if present
     if (props.filters?.type) {
       params.type = props.filters.type;
     }
     
-    // Add year filter if present
     if (props.filters?.year) {
-      // Filter projects by year using the completionDate field
       params.completionDate_like = props.filters.year;
     }
-    
-    // Fetch projects with params
+        
     const data = await projectsStore.fetchProjects(params);
     projects.value = data;
     totalProjects.value = projectsStore.totalProjects;
@@ -226,12 +207,10 @@ const loadItems = async () => {
   }
 }
 
-// Format project type for display
 const formatType = (type:string) => {
   return type.charAt(0).toUpperCase() + type.slice(1)
 }
 
-// Get color for project type
 const getTypeColor = (type:string) => {
   switch (type) {
     case 'web':
@@ -245,7 +224,6 @@ const getTypeColor = (type:string) => {
   }
 }
 
-// Format date for display
 const formatDate = (dateString:string | number | Date) => {
   const date = new Date(dateString)
   return date.toLocaleDateString('en-US', {
@@ -255,32 +233,18 @@ const formatDate = (dateString:string | number | Date) => {
   })
 }
 
-// Provide sample image URLs for development/fallback
 const getSampleImage = (id:number) => {
-  const imageId = id % 10 + 1  // Cycle through 10 sample images
+  const imageId = id % 10 + 1 
   return `https://picsum.photos/id/${200 + imageId}/500/300`
 }
 
-interface RawDataItem {
-  raw: Project;
-  [key: string]: unknown;
-}
 
-interface DirectDataItem extends Project {
-  [key: string]: unknown;
-}
-
-type DataItem = RawDataItem | DirectDataItem;
-
-// Típusbiztos helper függvény
 function getItemRaw(item: unknown): Project {
-  // Ellenőrizzük, hogy az item egy objektum-e
   if (!item || typeof item !== 'object') {
     console.error('Invalid DataTable item: not an object', item);
     throw new Error('Invalid DataTable item: not an object');
   }
 
-  // Ellenőrizzük, hogy van-e raw tulajdonsága (RawDataItem esetén)
   if ('raw' in item && item.raw && typeof item.raw === 'object') {
     const rawData = item.raw as Project;
     if ('id' in rawData && 'name' in rawData) {
@@ -288,18 +252,14 @@ function getItemRaw(item: unknown): Project {
     }
   }
 
-  // Ellenőrizzük, hogy közvetlenül tartalmazza-e a szükséges tulajdonságokat (DirectDataItem esetén)
   if ('id' in item && 'name' in item) {
     return item as Project;
   }
 
-  // Ha egyik struktúra sem illeszkedik
   console.error('Invalid DataTable item structure', item);
   throw new Error('Invalid DataTable item structure');
 }
 
-
-// Load initial data when component mounts
 onMounted(() => {
   loadItems()
 })
