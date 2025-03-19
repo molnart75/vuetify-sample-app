@@ -85,7 +85,7 @@
       "type": "mobile",
       "completionDate": "2024-02-20",
       "client": "FitLife Inc.",
-      "image": "/images/projects/fitness.jpg",
+      "image": "/images/projects/fitness.png",
       "technologies": ["React Native", "Firebase", "HealthKit/Google Fit integration"],
       "features": ["Workout planning", "Progress tracking", "Nutritional analysis", "Social sharing"],
       "teamSize": 4,
@@ -111,7 +111,7 @@
       "type": "web",
       "completionDate": "2024-01-25",
       "client": "Agile Projects Corp.",
-      "image": "/images/projects/projectmgmt.jpg",
+      "image": "/images/projects/projectmgmt.png",
       "technologies": ["Vue.js", "Vuetify", "GraphQL", "MongoDB"],
       "features": ["Task management", "Resource allocation", "Gantt charts", "Time tracking"],
       "teamSize": 5,
@@ -305,14 +305,7 @@
     }
   ],
   "slides": [
-    {
-      "id": 1,
-      "title": "Building Digital Excellence",
-      "subtitle": "Custom software solutions for modern businesses",
-      "image": "/images/slider/2149570939.0.jpg",
-      "buttonText": "Explore Our Work",
-      "buttonLink": "/projects"
-    },
+    
     {
       "id": 2,
       "title": "Mobile Solutions",
