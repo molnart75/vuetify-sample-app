@@ -176,7 +176,7 @@ const loadItems = async () => {
     
     const params: ProjectsParams = {
       _page: page.value,
-      _per_page: itemsPerPage.value,
+      _limit: itemsPerPage.value,
       _sort: sortField,
       _order: sortOrder
     };
